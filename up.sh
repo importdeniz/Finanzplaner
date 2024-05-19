@@ -3,7 +3,10 @@ git add .
 git commit -m "$*"
 git push
 
-# if permission is denied on Macbook, do that:
+
+
+
+# if permission is denied on Macbook, do that: du hs
 
 
 # You can open the terminal (press Ctrl + Alt + T) and cd to the target directory:
