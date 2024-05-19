@@ -22,6 +22,7 @@
                     </tr>
                 </thead>
                 <tbody id="entries">
+                    <!-- Einträge werden hier angezeigt -->
                 </tbody>
             </table>
         </div>
@@ -50,15 +51,19 @@
                 <option value="Sparen">Sparen</option>
                 <option value="Sonstiges">Sonstiges</option>
             </select>
+
             <label for="description">Beschreibung:</label>
             <input type="text" id="description" required>
+
             <label for="amount">Betrag (€):</label>
             <input type="number" step="0.01" id="amount" required>
+
             <label for="type">Typ:</label>
             <select id="type" required>
                 <option value="Einnahme">Einnahme</option>
                 <option value="Ausgabe">Ausgabe</option>
             </select>
+
             <button type="submit">Hinzufügen</button>
         </form>
     </div>

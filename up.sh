@@ -18,7 +18,7 @@ git push
 # cd /path/to/target
 # To give the file "the_file_name" execute permission (if the file-system allows you with the RW rights):
 
-# chmod +x the_file_name
+# chmod +x the_file_name test c
 
 
 
