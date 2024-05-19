@@ -1,3 +1,5 @@
+const API_URL = 'https://remotestorage-706f7-default-rtdb.europe-west1.firebasedatabase.app/';
+
 
 document.getElementById('entryForm').addEventListener('submit', function(event) {
   event.preventDefault();
