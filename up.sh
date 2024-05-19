@@ -1,7 +1,8 @@
 git pull
 git add .
 git commit -m "$*"
-git push
+git push origin karol
+
 
 <<<<<<< HEAD
 # if permission is denied on Macbook, do that:
