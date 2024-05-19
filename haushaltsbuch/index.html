@@ -8,60 +8,69 @@
     <script defer src="script.js"></script>
 </head>
 <body>
-    <h1>Haushaltsbuch</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Datum</th>
-                <th>Kategorie</th>
-                <th>Beschreibung</th>
-                <th>Betrag (€)</th>
-                <th>Typ</th>
-            </tr>
-        </thead>
-        <tbody id="entries">
-            <!-- Einträge werden hier angezeigt -->
-        </tbody>
-    </table>
+    <div class="container">
+        <h1>Haushaltsbuch</h1>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Datum</th>
+                        <th>Kategorie</th>
+                        <th>Beschreibung</th>
+                        <th>Betrag (€)</th>
+                        <th>Typ</th>
+                    </tr>
+                </thead>
+                <tbody id="entries">
+                    <!-- Einträge werden hier angezeigt -->
+                </tbody>
+            </table>
+        </div>
 
-    <form id="entryForm">
-        <label for="date">Datum:</label>
-        <input type="date" id="date" required>
+        <form id="entryForm" class="entry-form">
+            <label for="date">Datum:</label>
+            <input type="date" id="date" required>
 
-        <label for="category">Kategorie:</label>
-        <select id="category" required>
-            <option value="Gehalt">Gehalt</option>
-            <option value="Strom">Strom</option>
-            <option value="Wasser">Wasser</option>
-            <option value="Gas">Gas</option>
-            <option value="Internet">Internet</option>
-            <option value="Telefon">Telefon</option>
-            <option value="Krankenversicherung">Krankenversicherung</option>
-            <option value="Auto">Auto</option>
-            <option value="Versicherung">Versicherung</option>
-            <option value="Freizeit">Freizeit</option>
-            <option value="Gesundheit">Gesundheit</option>
-            <option value="Kleidung">Kleidung</option>
-            <option value="Haushaltswaren">Haushaltswaren</option>
-            <option value="Bildung">Bildung</option>
-            <option value="Urlaub">Urlaub</option>
-            <option value="Sparen">Sparen</option>
-            <option value="Sonstiges">Sonstiges</option>
-        </select>
+            <label for="category">Kategorie:</label>
+            <select id="category" required>
+                <option value="Gehalt">Gehalt</option>
+                <option value="Strom">Strom</option>
+                <option value="Wasser">Wasser</option>
+                <option value="Gas">Gas</option>
+                <option value="Internet">Internet</option>
+                <option value="Telefon">Telefon</option>
+                <option value="Krankenversicherung">Krankenversicherung</option>
+                <option value="Auto">Auto</option>
+                <option value="Versicherung">Versicherung</option>
+                <option value="Freizeit">Freizeit</option>
+                <option value="Gesundheit">Gesundheit</option>
+                <option value="Kleidung">Kleidung</option>
+                <option value="Haushaltswaren">Haushaltswaren</option>
+                <option value="Bildung">Bildung</option>
+                <option value="Urlaub">Urlaub</option>
+                <option value="Sparen">Sparen</option>
+                <option value="Sonstiges">Sonstiges</option>
+            </select>
 
-        <label for="description">Beschreibung:</label>
-        <input type="text" id="description" required>
+            <label for="description">Beschreibung:</label>
+            <input type="text" id="description" required>
 
-        <label for="amount">Betrag (€):</label>
-        <input type="number" step="0.01" id="amount" required>
+            <label for="amount">Betrag (€):</label>
+            <input type="number" step="0.01" id="amount" required>
 
-        <label for="type">Typ:</label>
-        <select id="type" required>
-            <option value="Einnahme">Einnahme</option>
-            <option value="Ausgabe">Ausgabe</option>
-        </select>
+            <label for="type">Typ:</label>
+            <select id="type" required>
+                <option value="Einnahme">Einnahme</option>
+                <option value="Ausgabe">Ausgabe</option>
+            </select>
 
+<<<<<<< HEAD:haushaltsbuch/index.html
         <button type="submit">Hinzufügen</button>
     </form>
+=======
+            <button type="submit">Hinzufügen</button>
+        </form>
+    </div>
+>>>>>>> 7d64c84ff1cd4a4de4f35a8a68652eee44714bbb:index.html
 </body>
 </html>
