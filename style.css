@@ -1,27 +1,76 @@
-
 body {
     font-family: Arial, sans-serif;
-    margin: 20px;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
 }
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
 }
-table, th, td {
-    border: 1px solid black;
-}
-th, td {
-    padding: 8px;
+
+table th, table td {
+    padding: 10px;
     text-align: left;
+    border-bottom: 1px solid #ddd;
 }
-th {
+
+table th {
     background-color: #f2f2f2;
+    font-weight: bold;
 }
-form {
-    display: flex;
-    flex-direction: column;
+
+.entry-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-label, input, select {
+
+.entry-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.entry-form input[type="date"],
+.entry-form input[type="text"],
+.entry-form input[type="number"],
+.entry-form select {
+    width: 100%;
+    padding: 10px;
     margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.entry-form button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.entry-form button[type="submit"]:hover {
+    background-color: #45a049;
 }
