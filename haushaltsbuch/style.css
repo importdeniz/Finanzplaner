@@ -263,7 +263,6 @@ table th {
 
 .entry-form input[type="date"] {
     padding: 15px;
-    transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
     font-family: "Roboto Mono", monospace;
@@ -271,7 +270,19 @@ table th {
     border: none;
     outline: none;
     border-radius: 5px;
+    margin-bottom: 8px;
+    width: 26px;
+    background: none;
+    color: white;
 }
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+
+
+
+
 
 ::-webkit-calendar-picker-indicator {
     padding: 5px;
