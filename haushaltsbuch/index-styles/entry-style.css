@@ -48,6 +48,7 @@
       outline: none;
       color: #fff;
       font-size: 1em;
+      transition: 0.5s;
   }
   
   /* Style form labels to display as blocks with bottom margin and bold font */
@@ -61,18 +62,6 @@
     pointer-events: none;
     font-size: 1em;
     text-transform: uppercase;
-  }
-
-  .entry-form input:valid ~ span,
-  .entry-form input:focus ~ span {
-    color: #04aa6d;
-    transform: translateX(10px) translateY(-7px);
-    font-size: 0.65em;
-    padding: 0 10px;
-    background: #1d2b3a;
-    border-left: 1px solid #00dfc4;
-    border-right: 1px solid #00dfc4;
-    letter-spacing: 0.2em;
   }
   
   input[type="date"]::-webkit-datetime-edit {

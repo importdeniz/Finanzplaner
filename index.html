@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="haushaltsbuch/index-styles/table-style.css">
   <link rel="stylesheet" href="haushaltsbuch/index-styles/style.css">
 </head>
-<body onload="onload()">
+<body onload="onload(),setTodayDate()">
   <div class="gradient-bg">
     <div class="gradient-container">
       <div class="g1"></div>
@@ -64,13 +64,13 @@
           <option value="Sonstiges">Sonstiges</option>
         </select>
 
-        <span id="label" for="description">Beschreibung:</span>
+        <span id="description" for="description">Beschreibung:</span>
         <input type="text" id="entry_span" required> 
 
-        <span id="label" for="amount">Betrag (€):</span>
+        <span id="amount" for="amount">Betrag (€):</span>
         <input type="number" id="entry_span" required>
 
-        <span id="label" for="selection">Typ:</span>
+        <span id="type" for="selection">Typ:</span>
         <select type="selection" id="entry_span" required>
           <!-- Options for different types (Einnahme or Ausgabe) -->
           <option style="display: none;"></option>
@@ -82,7 +82,7 @@
           <div class="submit" onclick="submit()">Hinzufügen</div>
         </div>
       </form>
-
+      
       <!-- Table container -->
       <div class="table-container">
         <table>

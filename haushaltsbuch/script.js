@@ -52,6 +52,7 @@ function submit() {
 // Function to reset the form fields
 function resetFormular() {
   document.getElementById("entryForm").reset(); // Reset the form fields
+  setTodayDate();
 }
 
 // Function to fetch entries from the API
@@ -122,3 +123,17 @@ async function toggleNav() {
   }
 }
 
+function setTodayDate() {
+    var dateInput = document.getElementById('date');
+    var today = new Date();
+    var day = ("0" + today.getDate()).slice(-2);
+    var month = ("0" + (today.getMonth() + 1)).slice(-2);
+    var year = today.getFullYear();
+    var todayDate = year + "-" + month + "-" + day;
+    
+    // Setting the value to today's date so it appears as the default value
+    dateInput.value = todayDate;
+    
+    // Optionally, you could use placeholder, but it won't be visible in date inputs
+    dateInput.setAttribute('placeholder', todayDate);
+}
