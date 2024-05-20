@@ -275,14 +275,10 @@ table th {
     background: none;
     color: white;
 }
+
 ::-webkit-calendar-picker-indicator {
   filter: invert(1);
 }
-
-
-
-
-
 
 ::-webkit-calendar-picker-indicator {
     padding: 5px;
