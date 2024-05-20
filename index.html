@@ -5,9 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Haushaltsbuch</title>
   <!-- Link to own stylesheet -->
-  <link rel="stylesheet" href="haushaltsbuch/style.css">
+  <link rel="stylesheet" href="haushaltsbuch/index-styles/background-style.css">
+  <link rel="stylesheet" href="haushaltsbuch/index-styles/sidenav-style.css">
+  <link rel="stylesheet" href="haushaltsbuch/index-styles/entry-style.css">
+  <link rel="stylesheet" href="haushaltsbuch/index-styles/table-style.css">
+  <link rel="stylesheet" href="haushaltsbuch/index-styles/style.css">
 </head>
-<body onload="onload()">
+<body onload="onload(),setTodayDate()">
   <div class="gradient-bg">
     <div class="gradient-container">
       <div class="g1"></div>
@@ -34,12 +38,13 @@
 
       <!-- Form for adding new entries -->
       <form id="entryForm" class="entry-form">
-        <label for="date">Datum:</label>
+        <span for="date">Datum:</span>
         <input type="date" id="date" required></input>
 
-        <label for="category">Kategorie:</label>
+        <span id="category" for>Kategorie:</span>
         <select id="category" required>
           <!-- Options for different categories -->
+          <option style="display: none;"></option>
           <option value="Gehalt">Gehalt</option>
           <option value="Strom">Strom</option>
           <option value="Wasser">Wasser</option>
@@ -59,15 +64,16 @@
           <option value="Sonstiges">Sonstiges</option>
         </select>
 
-        <label for="description">Beschreibung:</label>
-        <input type="text" id="description" required>
+        <span id="description" for="description">Beschreibung:</span>
+        <input type="text" id="entry_span" required> 
 
-        <label for="amount">Betrag (€):</label>
-        <input type="number" id="amount" required>
+        <span id="amount" for="amount">Betrag (€):</span>
+        <input type="number" id="entry_span" required>
 
-        <label for="type">Typ:</label>
-        <select id="type" required>
+        <span id="type" for="selection">Typ:</span>
+        <select type="selection" id="entry_span" required>
           <!-- Options for different types (Einnahme or Ausgabe) -->
+          <option style="display: none;"></option>
           <option value="Einnahme">Einnahme</option>
           <option value="Ausgabe">Ausgabe</option>
         </select>
@@ -76,7 +82,7 @@
           <div class="submit" onclick="submit()">Hinzufügen</div>
         </div>
       </form>
-
+      
       <!-- Table container -->
       <div class="table-container">
         <table>

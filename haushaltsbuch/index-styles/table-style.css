@@ -1,0 +1,28 @@
+/* Table Styles */
+  
+  /* Ensure horizontal overflow scrolling for tables exceeding container width */
+  .table-container {
+    overflow-x: auto; /* Enable horizontal scrolling */
+  }
+  
+  /* Style table to have 100% width and collapsed borders */
+  table {
+    width: 100%; /* Set table width to 100% of its container */
+    border-collapse: collapse; /* Collapse borders to avoid double borders */
+    margin-bottom: 20px; /* Add margin at the bottom of the table */
+    color: #ffffff;
+    font-weight: bold;
+  }
+  
+  /* Style table header and cells */
+  table th,
+  table td {
+    padding: 10px; /* Add padding to table cells */
+    text-align: left; /* Left-align text within cells */
+    border-bottom: 1px solid #ddd; /* Add bottom border to separate rows */
+  }
+  
+  /* Style table header */
+  table th {
+    font-weight: bold; /* Make table header text bold */
+  }
