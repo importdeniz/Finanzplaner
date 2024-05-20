@@ -267,11 +267,22 @@ table th {
 }
 
 .entry-form input[type="date"] {
-    
+    padding: 15px;
+    top: 50%;
+    left: 50%;
+    font-family: "Roboto Mono", monospace;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    width: 26px;
+    background: none;
+    color: white;
 }
-
 ::-webkit-calendar-picker-indicator {
-    margin: 0%;
+  filter: invert(1);
+  margin: 0%;
 }
 
 /* Style form input fields and select dropdown */
