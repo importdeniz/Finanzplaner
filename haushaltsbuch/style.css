@@ -1,234 +1,264 @@
 /* Set global styles for the body */
 body {
-    font-family: 'Dongle',sans-serif; /* Use 'Dongle' font with fallback to sans-serif */
-    background-color: #f5f5f5; /* Set background color to a light gray */
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
+  font-family: "Dongle", sans-serif; /* Use 'Dongle' font with fallback to sans-serif */
+  background-color: #f5f5f5; /* Set background color to a light gray */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
 }
 
 /* Define custom colors and variables */
 :root {
-    --color-bg1: rgb(100,0,162); /* Background color 1 */
-    --color-bg2: rgb(0,17,82); /* Background color 2 */
-    --color1: 18, 113, 255; /* Color 1 */
-    --color2: 221, 74, 255; /* Color 2 */
-    --color3: 100, 220, 255; /* Color 3 */
-    --color4: 200, 50, 50; /* Color 4 */
-    --color5: 180, 180, 50; /* Color 5 */
-    --color-interactive: 140, 100, 255; /* Interactive color */
-    --circle-size: 80%; /* Circle size */
-    --blending: hard-light; /* Blending mode */
+  --color-bg1: rgb(100, 0, 162); /* Background color 1 */
+  --color-bg2: rgb(0, 17, 82); /* Background color 2 */
+  --color1: 18, 113, 255; /* Color 1 */
+  --color2: 221, 74, 255; /* Color 2 */
+  --color3: 100, 220, 255; /* Color 3 */
+  --color4: 200, 50, 50; /* Color 4 */
+  --color5: 180, 180, 50; /* Color 5 */
+  --color-interactive: 140, 100, 255; /* Interactive color */
+  --circle-size: 80%; /* Circle size */
+  --blending: hard-light; /* Blending mode */
 }
 
 /* Keyframes for circular animation */
 @keyframes moveInCircle {
-    0% {
-        transform: rotate(0deg);
-    } 
-    50% {
-        transform: rotate(180deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* Keyframes for vertical movement animation */
 @keyframes moveVertical {
-    0% {
-        transform: translateY(-50%);
-    } 
-    50% {
-        transform: translateY(50%);
-    }
-    100% {
-        transform: translateY(-50%);
-    }
+  0% {
+    transform: translateY(-50%);
+  }
+  50% {
+    transform: translateY(50%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
 }
 
 /* Keyframes for horizontal movement animation */
 @keyframes moveHorizontal {
-    0% {
-        transform: translateX(-50%) translateY(-10%);
-    } 
-    50% {
-        transform: translateX(50%) translateY(10%);
-    }
-    100% {
-        transform: translateX(-50%) translateY(-10%);
-    }
+  0% {
+    transform: translateX(-50%) translateY(-10%);
+  }
+  50% {
+    transform: translateX(50%) translateY(10%);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-10%);
+  }
 }
 
 /* Styles for the gradient background */
 .gradient-bg {
-    width: 100vw;
-    height: 100vh;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  overflow: hidden;
+  background: linear-gradient(
+    40deg,
+    var(--color-bg1),
+    var(--color-bg2)
+  ); /* Gradient background */
+  top: 0;
+  left: 0;
+  z-index: -2;
+  display: inline-table;
+
+  svg {
+    display: none; /* Hide SVG elements */
+  }
+
+  .gradients-container {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Styles for individual gradients */
+  .g1 {
     position: absolute;
-    overflow: hidden;
-    background: linear-gradient(40deg, var(--color-bg1),var(--color-bg2)); /* Gradient background */
-    top: 0;
-    left: 0;
-    z-index: -2;
-    display: inline-table;
+    background: radial-gradient(
+        circle at center,
+        rgba(var(--color1), 0.8) 0,
+        rgba(var(--color1), 0) 40%
+      )
+      no-repeat;
+    mix-blend-mode: var(--blending);
 
-    svg {
-        display: none; /* Hide SVG elements */
-    }
-    
-    .gradients-container {
-        width: 100%;
-        height: 100%;
-    }
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2);
+    left: calc(50% - var(--circle-size) / 2);
 
-    /* Styles for individual gradients */
-    .g1 {
-        position: absolute;
-        background: radial-gradient(circle at center, rgba(var(--color1), 0.8) 0, rgba(var(--color1), 0) 40%) no-repeat;
-        mix-blend-mode: var(--blending);
+    transform-origin: center center;
+    animation: moveVertical 30s ease infinite;
 
-        width: var(--circle-size);
-        height: var(--circle-size);
-        top: calc(50% - var(--circle-size) / 2);
-        left: calc(50% - var(--circle-size) / 2);
+    opacity: 1;
+  }
 
-        transform-origin: center center;
-        animation: moveVertical 30s ease infinite;
+  .g2 {
+    position: absolute;
+    background: radial-gradient(
+        circle at center,
+        rgba(var(--color2), 0.8) 0,
+        rgba(var(--color2), 0) 40%
+      )
+      no-repeat;
+    mix-blend-mode: var(--blending);
 
-        opacity: 1;
-    }
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2);
+    left: calc(50% - var(--circle-size) / 2);
 
-    .g2 {
-        position: absolute;
-        background: radial-gradient(circle at center, rgba(var(--color2), 0.8) 0, rgba(var(--color2), 0) 40%) no-repeat;
-        mix-blend-mode: var(--blending);
+    transform-origin: calc(50% - 400px);
+    animation: moveInCircle 20s reverse infinite;
 
-        width: var(--circle-size);
-        height: var(--circle-size);
-        top: calc(50% - var(--circle-size) / 2);
-        left: calc(50% - var(--circle-size) / 2);
-        
-        transform-origin: calc(50% - 400px);
-        animation: moveInCircle 20s reverse infinite;
+    opacity: 1;
+  }
 
-        opacity: 1;
-    }
+  .g3 {
+    position: absolute;
+    background: radial-gradient(
+        circle at center,
+        rgba(var(--color3), 0.8) 0,
+        rgba(var(--color3), 0) 40%
+      )
+      no-repeat;
+    mix-blend-mode: var(--blending);
 
-    .g3 {
-        position: absolute;
-        background: radial-gradient(circle at center, rgba(var(--color3), 0.8) 0, rgba(var(--color3), 0) 40%) no-repeat;
-        mix-blend-mode: var(--blending);
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2 + 200px);
+    left: calc(50% - var(--circle-size) / 2 - 500px);
 
-        width: var(--circle-size);
-        height: var(--circle-size);
-        top: calc(50% - var(--circle-size) / 2 + 200px);
-        left: calc(50% - var(--circle-size) / 2 - 500px);
+    transform-origin: calc(50% + 400px);
+    animation: moveInCircle 40s linear infinite;
 
-        transform-origin: calc(50% + 400px);
-        animation: moveInCircle 40s linear infinite;
+    opacity: 1;
+  }
 
-        opacity: 1;
-    }
+  .g4 {
+    position: absolute;
+    background: radial-gradient(
+        circle at center,
+        rgba(var(--color4), 0.8) 0,
+        rgba(var(--color4), 0) 40%
+      )
+      no-repeat;
+    mix-blend-mode: var(--blending);
 
-    .g4 {
-        position: absolute;
-        background: radial-gradient(circle at center, rgba(var(--color4), 0.8) 0, rgba(var(--color4), 0) 40%) no-repeat;
-        mix-blend-mode: var(--blending);
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2);
+    left: calc(50% - var(--circle-size) / 2);
 
-        width: var(--circle-size);
-        height: var(--circle-size);
-        top: calc(50% - var(--circle-size) / 2);
-        left: calc(50% - var(--circle-size) / 2);
+    transform-origin: calc(50% - 200px);
+    animation: moveHorizontal 40s reverse infinite;
 
-        transform-origin: calc(50% - 200px);
-        animation: moveHorizontal 40s reverse infinite;
+    opacity: 0.7;
+  }
 
-        opacity: 0.7;
-    }
+  .g5 {
+    position: absolute;
+    background: radial-gradient(
+        circle at center,
+        rgba(var(--color5), 0.8) 0,
+        rgba(var(--color5), 0) 40%
+      )
+      no-repeat;
+    mix-blend-mode: var(--blending);
 
-    .g5 {
-        position: absolute;
-        background: radial-gradient(circle at center, rgba(var(--color5), 0.8) 0, rgba(var(--color5), 0) 40%) no-repeat;
-        mix-blend-mode: var(--blending);
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size));
+    left: calc(50% - var(--circle-size));
 
-        width: var(--circle-size);
-        height: var(--circle-size);
-        top: calc(50% - var(--circle-size));
-        left: calc(50% - var(--circle-size));
+    transform-origin: calc(50% - 800px) calc(50% + 200px);
+    animation: moveInCircle 20s ease infinite;
 
-        transform-origin: calc(50% - 800px) calc(50% + 200px);
-        animation: moveInCircle 20s ease infinite;
-
-        opacity: 1;
-    }
+    opacity: 1;
+  }
 }
 
 /* Container Styles */
 
 /* Style the container to have a maximum width, centered alignment, and padding */
 .container {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 3%;
-    left: 35%;
-    max-width: 800px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 3%;
+  left: 35%;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Heading Styles */
 
 /* Style the heading to be centered and have a dark color */
 h1 {
-    text-align: center; /* Center align the heading */
-    color: #333; /* Set heading color to a dark gray */
+  text-align: center; /* Center align the heading */
+  color: #ffffff;
 }
 
 /* Table Styles */
 
 /* Ensure horizontal overflow scrolling for tables exceeding container width */
 .table-container {
-    overflow-x: auto; /* Enable horizontal scrolling */
+  overflow-x: auto; /* Enable horizontal scrolling */
 }
 
 /* Style table to have 100% width and collapsed borders */
 table {
-    width: 100%; /* Set table width to 100% of its container */
-    border-collapse: collapse; /* Collapse borders to avoid double borders */
-    margin-bottom: 20px; /* Add margin at the bottom of the table */
-    color: #ffffff;
-    font-weight: bold;
+  width: 100%; /* Set table width to 100% of its container */
+  border-collapse: collapse; /* Collapse borders to avoid double borders */
+  margin-bottom: 20px; /* Add margin at the bottom of the table */
+  color: #ffffff;
+  font-weight: bold;
 }
 
 /* Style table header and cells */
-table th, table td {
-    padding: 10px; /* Add padding to table cells */
-    text-align: left; /* Left-align text within cells */
-    border-bottom: 1px solid #ddd; /* Add bottom border to separate rows */
+table th,
+table td {
+  padding: 10px; /* Add padding to table cells */
+  text-align: left; /* Left-align text within cells */
+  border-bottom: 1px solid #ddd; /* Add bottom border to separate rows */
 }
 
 /* Style table header */
 table th {
-    background-color: #f2f2f2; /* Set background color for table header */
-    font-weight: bold; /* Make table header text bold */
+  background-color: #f2f2f2; /* Set background color for table header */
+  font-weight: bold; /* Make table header text bold */
 }
 
 /* Form Styles */
 
 /* Style the form container with a white background, padding, border radius, and box shadow */
 .entry-form {
-    background-color: #fff; /* Set background color to white */
-    padding: 20px; /* Add padding around the form */
-    border-radius: 5px; /* Add border radius for rounded corners */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add box shadow for depth effect */
+  background-color: #fff; /* Set background color to white */
+  padding: 20px; /* Add padding around the form */
+  border-radius: 5px; /* Add border radius for rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add box shadow for depth effect */
 }
 
 /* Style form labels to display as blocks with bottom margin and bold font */
 .entry-form label {
-    display: block; /* Display labels as block elements */
-    margin-bottom: 5px; /* Add bottom margin to separate labels */
-    font-weight: bold; /* Make label text bold */
+  display: block; /* Display labels as block elements */
+  margin-bottom: 5px; /* Add bottom margin to separate labels */
+  font-weight: bold; /* Make label text bold */
 }
 
 /* Style form input fields and select dropdown */
@@ -236,113 +266,116 @@ table th {
 .entry-form input[type="text"],
 .entry-form input[type="number"],
 .entry-form select {
-    width: 100%; /* Set input width to 100% of its container */
-    padding: 10px; /* Add padding to inputs */
-    margin-bottom: 10px; /* Add bottom margin to separate inputs */
-    border: 1px solid #ccc; /* Add border with light gray color */
-    border-radius: 3px; /* Add border radius for rounded corners */
+  width: 100%; /* Set input width to 100% of its container */
+  padding: 10px; /* Add padding to inputs */
+  margin-bottom: 10px; /* Add bottom margin to separate inputs */
+  border: 1px solid #ccc; /* Add border with light gray color */
+  border-radius: 3px; /* Add border radius for rounded corners */
 }
 
 /* Style form submit button */
 .entry-form button[type="submit"] {
-    width: 100%; /* Set button width to 100% of its container */
-    padding: 10px; /* Add padding to the button */
-    background-color: #4caf50; /* Set button background color */
-    color: #fff; /* Set button text color to white */
-    border: none; /* Remove button border */
-    border-radius: 3px; /* Add border radius for rounded corners */
-    cursor: pointer; /* Change cursor to pointer on hover */
+  width: 100%; /* Set button width to 100% of its container */
+  padding: 10px; /* Add padding to the button */
+  background-color: #4caf50; /* Set button background color */
+  color: #fff; /* Set button text color to white */
+  border: none; /* Remove button border */
+  border-radius: 3px; /* Add border radius for rounded corners */
+  cursor: pointer; /* Change cursor to pointer on hover */
 }
 
 /* Style form submit button on hover */
 .entry-form button[type="submit"]:hover {
-    background-color: #45a049; /* Darken button background color on hover */
+  background-color: #45a049; /* Darken button background color on hover */
 }
 
 /* Submit Button Styles */
 
 /* Style submit button div with flexbox for centering */
 .submit-div {
-    display: flex; /* Use flexbox for layout */
-    justify-content: center; /* Center align children horizontally */
-    align-items: center; /* Center align children vertically */
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center align children horizontally */
+  align-items: center; /* Center align children vertically */
 }
 
 /* Style general submit button with green background, white text, padding, border, and border radius */
 .submit {
-    cursor: pointer; /* Change cursor to pointer on hover */
-    background-color: #04AA6D; /* Set button background color to green */
-    border: none; /* Remove button border */
-    color: white; /* Set button text color to white */
-    padding: 15px 32px; /* Add padding to the button */
-    text-align: center; /* Center align button text */
-    text-decoration: none; /* Remove default text decoration */
-    display: inline-block; /* Display button as inline-block element */
-    font-size: 16px; /* Set button font size */
-    border-radius: 6px; /* Add border radius for rounded corners */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  background-color: #04aa6d; /* Set button background color to green */
+  border: none; /* Remove button border */
+  color: white; /* Set button text color to white */
+  padding: 15px 32px; /* Add padding to the button */
+  text-align: center; /* Center align button text */
+  text-decoration: none; /* Remove default text decoration */
+  display: inline-block; /* Display button as inline-block element */
+  font-size: 16px; /* Set button font size */
+  border-radius: 6px; /* Add border radius for rounded corners */
 }
 
 /* Style general submit button on hover with darker background color */
 .submit:hover {
-    background-color: #03754b; /* Darken button background color on hover */
+  background-color: #03754b; /* Darken button background color on hover */
 }
 
 /* Style the side navigation bar */
 .sidenav {
-    height: 100%; /* Set height to fill the entire viewport */
-    width: 200px; /* Set the width of the sidebar */
-    position: fixed; /* Keep the sidebar fixed */
-    top: 0; /* Position from the top */
-    left: 0; /* Initially show the navigation bar */
-    background-color: #333; /* Set background color */
-    padding-top: 60px; /* Add top padding to account for the navigation header */
-    transition: left 0.3s ease; /* Add transition effect for smooth animation */
-    z-index: 1; /* Ensure navigation bar appears above other content */
+  height: 100%; /* Set height to fill the entire viewport */
+  width: 200px; /* Set the width of the sidebar */
+  position: fixed; /* Keep the sidebar fixed */
+  top: 0; /* Position from the top */
+  left: 0; /* Initially show the navigation bar */
+  background-color: #333; /* Set background color */
+  padding-top: 60px; /* Add top padding to account for the navigation header */
+  transition: left 0.3s ease; /* Add transition effect for smooth animation */
+  z-index: 1; /* Ensure navigation bar appears above other content */
 }
 
 /* Style the links inside the navigation bar */
 .sidenav a {
-    padding: 10px 15px; /* Add padding */
-    text-decoration: none; /* Remove underline */
-    font-size: 18px; /* Set font size */
-    color: #fff; /* Text color */
-    display: block; /* Make the links appear one below the other */
+  padding: 10px 15px; /* Add padding */
+  text-decoration: none; /* Remove underline */
+  font-size: 18px; /* Set font size */
+  color: #fff; /* Text color */
+  display: block; /* Make the links appear one below the other */
 }
 
 /* Change the color of links on hover */
 .sidenav a:hover {
-    background-color: #555; /* Darken the background color */
+  background-color: #555; /* Darken the background color */
 }
 
 /* Style the toggle button */
 .toggle-btn {
-    position: absolute; /* Position it wherever you want */
-    top: 20px; /* Adjust the top position */
-    left: 20px; /* Adjust the left position */
-    z-index: 2; /* Ensure it appears above other content */
-    background-color: #333; /* Background color */
-    color: #fff; /* Text color */
-    padding: 10px 20px; /* Padding for better visual */
-    border: none; /* Remove border */
-    cursor: pointer; /* Add cursor pointer for better UX */
+  position: absolute; /* Position it wherever you want */
+  top: 20px; /* Adjust the top position */
+  left: 20px; /* Adjust the left position */
+  z-index: 2; /* Ensure it appears above other content */
+  background-color: #333; /* Background color */
+  color: #fff; /* Text color */
+  padding: 10px 20px; /* Padding for better visual */
+  border: none; /* Remove border */
+  cursor: pointer; /* Add cursor pointer for better UX */
 }
 
 /* Style the button on hover */
 .toggle-btn:hover {
-    background-color: #555; /* Darken the background color */
+  background-color: #555; /* Darken the background color */
 }
 
 /* Style the active state of the button */
 .toggle-btn.active {
-    background-color: #555; /* Dark background color when active */
+  background-color: #555; /* Dark background color when active */
 }
 
-.g1, .g2, .g3, .g4 {
-    z-index: -1;
+.g1,
+.g2,
+.g3,
+.g4 {
+  z-index: -1;
 }
 
 .position-normal {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
 }
