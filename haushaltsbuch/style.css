@@ -204,6 +204,7 @@ body {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  transition: left 0.3s ease; /* Add transition effect for smooth animation */
 }
 
 /* Heading Styles */
