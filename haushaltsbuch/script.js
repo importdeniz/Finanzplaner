@@ -112,12 +112,13 @@ function addEntryToTable(entry) {
 async function toggleNav() {
   var sidenav = document.querySelector('.sidenav'); // Get reference to the side navigation bar
   sidenav.classList.toggle('active'); // Toggle the 'active' class to show/hide the sidebar
-  var main = document.querySelector("entries"); // Get reference to the main content
+  let main = document.getElementById("container"); // Get reference to the main content
   if (sidenav.style.left === "0px") {
     sidenav.style.left = "-200px"; // Hide the navigation bar
-    main.style.marginLeft = "0"; // Move the main content to fill the entire width
+    main.style.left = "30%"
   } else {
     sidenav.style.left = "0px"; // Show the navigation bar
-    main.style.marginLeft = "200px"; // Add margin to the main content to make space for the navigation bar
+    main.style.left = "35%"
   }
 }
+
