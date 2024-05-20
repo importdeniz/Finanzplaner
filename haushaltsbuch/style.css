@@ -280,9 +280,19 @@ table th {
     background: none;
     color: white;
 }
+
 ::-webkit-calendar-picker-indicator {
   filter: invert(1);
+<<<<<<< HEAD
   margin: 0%;
+=======
+}
+
+::-webkit-calendar-picker-indicator {
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+>>>>>>> 20a8dd82e85a1e19e21f3fc5601304224a24168e
 }
 
 /* Style form input fields and select dropdown */
