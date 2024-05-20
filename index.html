@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Haushaltsbuch</title>
-    <!-- Link to own stylesheet -->
-    <link rel="stylesheet" href="haushaltsbuch/style.css" />
-    <!-- Link to external JavaScript file -->
-    <script src="haushaltsbuch/script.js"></script>
-  </head>
-  <body onload="onload()">
-    
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Haushaltsbuch</title>
+  <!-- Link to own stylesheet -->
+  <link rel="stylesheet" href="haushaltsbuch/style.css">
+</head>
+<body onload="onload()">
+  <div class="gradient-bg">
+    <div class="gradient-container">
+      <div class="g1"></div>
+      <div class="g2"></div>
+      <div class="g3"></div>
+      <div class="g4"></div>
+      <div class="g5"></div>
+    </div>
+
     <!-- Side navigation bar -->
     <div class="sidenav">
       <a href="#home">Home</a>
@@ -20,7 +26,7 @@
     </div>
     <!-- Button to toggle navigation -->
     <button class="toggle-btn" onclick="toggleNav()">Toggle Navigation</button>
-    
+
     <!-- Main container -->
     <div class="container">
       <h1>Haushaltsbuch</h1>
@@ -28,7 +34,7 @@
       <!-- Form for adding new entries -->
       <form id="entryForm" class="entry-form">
         <label for="date">Datum:</label>
-        <input type="date" id="date" required />
+        <input type="date" id="date" required>
 
         <label for="category">Kategorie:</label>
         <select id="category" required>
@@ -53,10 +59,10 @@
         </select>
 
         <label for="description">Beschreibung:</label>
-        <input type="text" id="description" required />
+        <input type="text" id="description" required>
 
         <label for="amount">Betrag (€):</label>
-        <input type="number" step="0.01" id="amount" required />
+        <input type="number" step="0.01" id="amount" required>
 
         <label for="type">Typ:</label>
         <select id="type" required>
@@ -84,11 +90,12 @@
             </tr>
           </thead>
           <!-- Table body for entries -->
-          <tbody id="entries">
-
-          </tbody>
+          <tbody id="entries"></tbody>
         </table>
       </div>
     </div>
-  </body>
+  </div>
+  <!-- Link to external JavaScript file -->
+  <script src="haushaltsbuch/script.js"></script>
+</body>
 </html>
