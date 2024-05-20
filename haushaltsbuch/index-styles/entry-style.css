@@ -1,0 +1,149 @@
+/* Container Styles */
+
+/* Style the container to have a maximum width, centered alignment, and padding */
+.container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 3%;
+    left: 35%;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    transition: left 0.3s ease; /* Add transition effect for smooth animation */
+  }
+  
+  /* Heading Styles */
+  
+  /* Style the heading to be centered and have a dark color */
+  h1 {
+    text-align: center; /* Center align the heading */
+    color: #ffffff;
+  }
+  
+  /* Form Styles */
+  
+  /* Style the form container with a white background, padding, border radius, and box shadow */
+  .entry-form {
+    padding: 10px; /* Add padding around the form */
+    border-radius: 5px; /* Add border radius for rounded corners */
+    box-shadow: 0 2px 4px rgb(0 0 0 / 16%); /* Add box shadow for depth effect */
+    width: 250px;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+    outline: none;
+    color: #ffffff;
+    font-size: 1em;
+    position: relative;
+  }
+  
+  .entry-form input{
+      width: 100%;
+      padding: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      background: #1d2b3a;
+      border-radius: 5px;
+      outline: none;
+      color: #fff;
+      font-size: 1em;
+  }
+  
+  /* Style form labels to display as blocks with bottom margin and bold font */
+  .entry-form span {
+    display: block; /* Display labels as block elements */
+    font-weight: bold; /* Make label text bold */
+    color: rgba(255, 255, 255, 0.25); /* Text color */
+    position: absolute;
+    left: 0;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 1em;
+    text-transform: uppercase;
+  }
+
+  .entry-form input:valid ~ span,
+  .entry-form input:focus ~ span {
+    color: #04aa6d;
+    transform: translateX(10px) translateY(-7px);
+    font-size: 0.65em;
+    padding: 0 10px;
+    background: #1d2b3a;
+    border-left: 1px solid #00dfc4;
+    border-right: 1px solid #00dfc4;
+    letter-spacing: 0.2em;
+  }
+  
+  input[type="date"]::-webkit-datetime-edit {
+      color: transparent;
+  }
+  
+  ::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    margin: 0%;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+  
+  /* Style form input fields and select dropdown */
+  .entry-form input[type="text"],
+  .entry-form input[type="number"],
+  .entry-form input[type="date"],
+  .entry-form select {
+    width: 100%; /* Set input width to 100% of its container */
+    padding: 10px; /* Add padding to inputs */
+    margin-bottom: 10px; /* Add bottom margin to separate inputs */
+    border: 1px solid #ccc; /* Add border with light gray color */
+    border-radius: 5px; /* Add border radius for rounded corners */
+    background-color:#ffffff00;
+    color: #fff;
+    outline: none;
+    font-size: 1em;
+  }
+  
+  /* Style form submit button */
+  .entry-form button[type="submit"] {
+    width: 100%; /* Set button width to 100% of its container */
+    padding: 10px; /* Add padding to the button */
+    background-color: #4caf50; /* Set button background color */
+    color: #fff; /* Set button text color to white */
+    border: none; /* Remove button border */
+    border-radius: 3px; /* Add border radius for rounded corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+  }
+  
+  /* Style form submit button on hover */
+  .entry-form button[type="submit"]:hover {
+    background-color: #45a049; /* Darken button background color on hover */
+  }
+  
+  /* Submit Button Styles */
+  
+  /* Style submit button div with flexbox for centering */
+  .submit-div {
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center align children horizontally */
+    align-items: center; /* Center align children vertically */
+  }
+  
+  /* Style general submit button with green background, white text, padding, border, and border radius */
+  .submit {
+    cursor: pointer; /* Change cursor to pointer on hover */
+    background-color: #04aa6d; /* Set button background color to green */
+    border: none; /* Remove button border */
+    color: white; /* Set button text color to white */
+    padding: 15px 32px; /* Add padding to the button */
+    text-align: center; /* Center align button text */
+    text-decoration: none; /* Remove default text decoration */
+    display: inline-block; /* Display button as inline-block element */
+    font-size: 16px; /* Set button font size */
+    border-radius: 6px; /* Add border radius for rounded corners */
+  }
+  
+  /* Style general submit button on hover with darker background color */
+  .submit:hover {
+    background-color: #03754b; /* Darken button background color on hover */
+  }
+  

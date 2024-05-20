@@ -5,7 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Haushaltsbuch</title>
   <!-- Link to own stylesheet -->
-  <link rel="stylesheet" href="haushaltsbuch/style.css">
+  <link rel="stylesheet" href="haushaltsbuch/index-styles/background-style.css">
+  <link rel="stylesheet" href="haushaltsbuch/index-styles/sidenav-style.css">
+  <link rel="stylesheet" href="haushaltsbuch/index-styles/entry-style.css">
+  <link rel="stylesheet" href="haushaltsbuch/index-styles/table-style.css">
+  <link rel="stylesheet" href="haushaltsbuch/index-styles/style.css">
 </head>
 <body onload="onload()">
   <div class="gradient-bg">
@@ -37,7 +41,7 @@
         <span for="date">Datum:</span>
         <input type="date" id="date" required></input>
 
-        <span for="category">Kategorie:</span>
+        <span id="category" for>Kategorie:</span>
         <select id="category" required>
           <!-- Options for different categories -->
           <option style="display: none;"></option>
@@ -60,14 +64,14 @@
           <option value="Sonstiges">Sonstiges</option>
         </select>
 
-        <span for="description">Beschreibung:</span>
-        <input type="text" id="description">
+        <span id="label" for="description">Beschreibung:</span>
+        <input type="text" id="entry_span" required> 
 
-        <span for="amount">Betrag (€):</span>
-        <input type="number" id="amount" required>
+        <span id="label" for="amount">Betrag (€):</span>
+        <input type="number" id="entry_span" required>
 
-        <span for="type">Typ:</span>
-        <select id="type" required>
+        <span id="label" for="selection">Typ:</span>
+        <select type="selection" id="entry_span" required>
           <!-- Options for different types (Einnahme or Ausgabe) -->
           <option style="display: none;"></option>
           <option value="Einnahme">Einnahme</option>

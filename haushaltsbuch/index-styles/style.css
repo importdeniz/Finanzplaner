@@ -1,0 +1,7 @@
+/* Set global styles for the body */
+body {
+  font-family: "Dongle", sans-serif; /* Use 'Dongle' font with fallback to sans-serif */
+  background-color: #f5f5f5; /* Set background color to a light gray */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
