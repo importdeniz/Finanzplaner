@@ -4,35 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Haushaltsbuch</title>
+    <!-- Link to own stylesheet -->
     <link rel="stylesheet" href="haushaltsbuch/style.css" />
+    <!-- Link to external JavaScript file -->
     <script src="haushaltsbuch/script.js"></script>
   </head>
   <body onload="onload()">
+    
+    <!-- Side navigation bar -->
+    <div class="sidenav">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <!-- Button to toggle navigation -->
+    <button class="toggle-btn" onclick="toggleNav()">Toggle Navigation</button>
+    
+    <!-- Main container -->
     <div class="container">
-      <h1>Haushaltsbuch karol</h1>
-      <div class="table-container">
-        <table>
-          <thead>
-            <tr>
-              <th>Datum</th>
-              <th>Kategorie</th>
-              <th>Beschreibung</th>
-              <th>Betrag (€)</th>
-              <th>Typ</th>
-            </tr>
-          </thead>
-          <tbody id="entries">
+      <h1>Haushaltsbuch</h1>
 
-          </tbody>
-        </table>
-      </div>
-
+      <!-- Form for adding new entries -->
       <form id="entryForm" class="entry-form">
         <label for="date">Datum:</label>
         <input type="date" id="date" required />
 
         <label for="category">Kategorie:</label>
         <select id="category" required>
+          <!-- Options for different categories -->
           <option value="Gehalt">Gehalt</option>
           <option value="Strom">Strom</option>
           <option value="Wasser">Wasser</option>
@@ -60,13 +60,35 @@
 
         <label for="type">Typ:</label>
         <select id="type" required>
+          <!-- Options for different types (Einnahme or Ausgabe) -->
           <option value="Einnahme">Einnahme</option>
           <option value="Ausgabe">Ausgabe</option>
         </select>
+        <!-- Button to submit the form -->
         <div class="submit-div">
           <div class="submit" onclick="submit()">Hinzufügen</div>
         </div>
       </form>
+
+      <!-- Table container -->
+      <div class="table-container">
+        <table>
+          <!-- Table header -->
+          <thead>
+            <tr>
+              <th>Datum</th>
+              <th>Kategorie</th>
+              <th>Beschreibung</th>
+              <th>Betrag (€)</th>
+              <th>Typ</th>
+            </tr>
+          </thead>
+          <!-- Table body for entries -->
+          <tbody id="entries">
+
+          </tbody>
+        </table>
+      </div>
     </div>
   </body>
 </html>
