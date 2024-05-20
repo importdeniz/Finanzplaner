@@ -241,7 +241,6 @@ table td {
 
 /* Style table header */
 table th {
-  background-color: #f2f2f2; /* Set background color for table header */
   font-weight: bold; /* Make table header text bold */
 }
 
@@ -249,10 +248,9 @@ table th {
 
 /* Style the form container with a white background, padding, border radius, and box shadow */
 .entry-form {
-  background-color: #fff; /* Set background color to white */
   padding: 20px; /* Add padding around the form */
   border-radius: 5px; /* Add border radius for rounded corners */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add box shadow for depth effect */
+  box-shadow: 0 2px 4px rgb(0 0 0 / 16%); /* Add box shadow for depth effect */
 }
 
 /* Style form labels to display as blocks with bottom margin and bold font */
@@ -260,10 +258,28 @@ table th {
   display: block; /* Display labels as block elements */
   margin-bottom: 5px; /* Add bottom margin to separate labels */
   font-weight: bold; /* Make label text bold */
+  color: #fff; /* Text color */
+}
+
+.entry-form input[type="date"] {
+    padding: 15px;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    font-family: "Roboto Mono", monospace;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+::-webkit-calendar-picker-indicator {
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 3px;
 }
 
 /* Style form input fields and select dropdown */
-.entry-form input[type="date"],
 .entry-form input[type="text"],
 .entry-form input[type="number"],
 .entry-form select {
@@ -325,7 +341,6 @@ table th {
   position: fixed; /* Keep the sidebar fixed */
   top: 0; /* Position from the top */
   left: 0; /* Initially show the navigation bar */
-  background-color: #333; /* Set background color */
   padding-top: 60px; /* Add top padding to account for the navigation header */
   transition: left 0.3s ease; /* Add transition effect for smooth animation */
   z-index: 1; /* Ensure navigation bar appears above other content */
