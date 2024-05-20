@@ -28,7 +28,7 @@ No installation is required to use this project. Simply open the `index.html` fi
 
 ## Credits
 
-This project was created by [Your Name].
+This project was created by Deniz Grundman and Karol Kowalczyk.
 
 ## License
 
