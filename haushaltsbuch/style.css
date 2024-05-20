@@ -74,3 +74,26 @@ table th {
 .entry-form button[type="submit"]:hover {
     background-color: #45a049;
 }
+
+.submit-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.submit {
+    cursor: pointer;
+    background-color: #04AA6D; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 6px;
+}
+
+.submit:hover {
+    background-color: #03754b;
+}

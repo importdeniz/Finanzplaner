@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Haushaltsbuch</title>
+    <link rel="stylesheet" href="haushaltsbuch/style.css" />
+    <script src="haushaltsbuch/script.js"></script>
+  </head>
+  <body onload="onload()">
+    <div class="container">
+      <h1>Haushaltsbuch karol</h1>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Datum</th>
+              <th>Kategorie</th>
+              <th>Beschreibung</th>
+              <th>Betrag (€)</th>
+              <th>Typ</th>
+            </tr>
+          </thead>
+          <tbody id="entries">
+
+          </tbody>
+        </table>
+      </div>
+
+      <form id="entryForm" class="entry-form">
+        <label for="date">Datum:</label>
+        <input type="date" id="date" required />
+
+        <label for="category">Kategorie:</label>
+        <select id="category" required>
+          <option value="Gehalt">Gehalt</option>
+          <option value="Strom">Strom</option>
+          <option value="Wasser">Wasser</option>
+          <option value="Gas">Gas</option>
+          <option value="Internet">Internet</option>
+          <option value="Telefon">Telefon</option>
+          <option value="Krankenversicherung">Krankenversicherung</option>
+          <option value="Auto">Auto</option>
+          <option value="Versicherung">Versicherung</option>
+          <option value="Freizeit">Freizeit</option>
+          <option value="Gesundheit">Gesundheit</option>
+          <option value="Kleidung">Kleidung</option>
+          <option value="Haushaltswaren">Haushaltswaren</option>
+          <option value="Bildung">Bildung</option>
+          <option value="Urlaub">Urlaub</option>
+          <option value="Sparen">Sparen</option>
+          <option value="Sonstiges">Sonstiges</option>
+        </select>
+
+        <label for="description">Beschreibung:</label>
+        <input type="text" id="description" required />
+
+        <label for="amount">Betrag (€):</label>
+        <input type="number" step="0.01" id="amount" required />
+
+        <label for="type">Typ:</label>
+        <select id="type" required>
+          <option value="Einnahme">Einnahme</option>
+          <option value="Ausgabe">Ausgabe</option>
+        </select>
+        <div class="submit-div">
+          <div class="submit" onclick="submit()">Hinzufügen</div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
