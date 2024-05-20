@@ -1,29 +1,123 @@
-const API_URL = 'https://remotestorage-706f7-default-rtdb.europe-west1.firebasedatabase.app/';
+// Define the API URL for fetching and posting entries
+const API_URL = "https://remotestorage-706f7-default-rtdb.europe-west1.firebasedatabase.app/entries.json";
 
+// Function to be executed when the page loads
+function onload() {
+  fetchEntries(); // Fetch entries from the API
+}
 
-document.getElementById('entryForm').addEventListener('submit', function(event) {
-  event.preventDefault();
+// Asynchronously send data to the API
+async function sendData(entry) {
+  // POST request to the API URL with the entry data
+  fetch(API_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(entry),
+  })
+    .then((response) => response.json()) // Parse response as JSON
+    .then((data) => {
+      console.log("Success:", data); // Log success message
+      fetchEntries(); // Fetch entries after posting data
+    })
+    .catch((error) => {
+      console.error("Error:", error); // Log error message if any
+    });
+}
 
-  const date = document.getElementById('date').value;
-  const category = document.getElementById('category').value;
-  const description = document.getElementById('description').value;
-  const amount = document.getElementById('amount').value;
-  const type = document.getElementById('type').value;
+// Function to handle form submission
+function submit() {
+  // Retrieve data from form fields
+  const date = document.getElementById("date").value;
+  const category = document.getElementById("category").value;
+  const description = document.getElementById("description").value;
+  const amount = document.getElementById("amount").value;
+  const type = document.getElementById("type").value;
 
-  const table = document.getElementById('entries');
-  const row = table.insertRow();
+  // Create an object with the entry data
+  const entry = {
+    date: date,
+    category: category,
+    description: description,
+    amount: amount,
+    type: type,
+  };
 
-  const cell1 = row.insertCell(0);
-  const cell2 = row.insertCell(1);
-  const cell3 = row.insertCell(2);
-  const cell4 = row.insertCell(3);
-  const cell5 = row.insertCell(4);
+  // Send entry data to the API
+  sendData(entry);
+  resetFormular(); // Reset the form after submission
+}
 
-  cell1.innerHTML = date;
-  cell2.innerHTML = category;
-  cell3.innerHTML = description;
-  cell4.innerHTML = parseFloat(amount).toFixed(2);
-  cell5.innerHTML = type;
+// Function to reset the form fields
+function resetFormular() {
+  document.getElementById("entryForm").reset(); // Reset the form fields
+}
 
-  document.getElementById('entryForm').reset();
-});
+// Function to fetch entries from the API
+function fetchEntries() {
+  // Fetch entries from the API URL
+  fetch(API_URL)
+    .then((response) => response.json()) // Parse response as JSON
+    .then((data) => {
+      const table = document.getElementById("entries"); // Get reference to entries table
+      table.innerHTML = ""; // Clear existing table content
+
+      // Iterate through each entry in the data
+      for (const key in data) {
+        if (data.hasOwnProperty(key)) {
+          const entry = data[key]; // Get current entry
+          addEntryToTable(entry); // Add entry to the table
+        }
+      }
+    })
+    .catch((error) => {
+      console.error("Error:", error); // Log error message if any
+    });
+}
+
+// Function to add an entry to the table
+function addEntryToTable(entry) {
+  const table = document.getElementById("entries"); // Get reference to entries table
+
+  // Create a new table row for the entry
+  const row = document.createElement("tr");
+
+  // Create table cells for each entry property and add content
+  const dateCell = document.createElement("td");
+  dateCell.textContent = entry.date;
+  row.appendChild(dateCell);
+
+  const categoryCell = document.createElement("td");
+  categoryCell.textContent = entry.category;
+  row.appendChild(categoryCell);
+
+  const descriptionCell = document.createElement("td");
+  descriptionCell.textContent = entry.description;
+  row.appendChild(descriptionCell);
+
+  const amountCell = document.createElement("td");
+  amountCell.textContent = entry.amount;
+  row.appendChild(amountCell);
+
+  const typeCell = document.createElement("td");
+  typeCell.textContent = entry.type;
+  row.appendChild(typeCell);
+
+  // Append the row to the table
+  table.appendChild(row);
+}
+
+// Function to toggle the visibility of the side navigation bar
+async function toggleNav() {
+  var sidenav = document.querySelector('.sidenav'); // Get reference to the side navigation bar
+  sidenav.classList.toggle('active'); // Toggle the 'active' class to show/hide the sidebar
+  var main = document.querySelector("entries"); // Get reference to the main content
+  if (sidenav.style.left === "0px") {
+    sidenav.style.left = "-200px"; // Hide the navigation bar
+    main.style.marginLeft = "0"; // Move the main content to fill the entire width
+  } else {
+    sidenav.style.left = "0px"; // Show the navigation bar
+    main.style.marginLeft = "200px"; // Add margin to the main content to make space for the navigation bar
+  }
+}

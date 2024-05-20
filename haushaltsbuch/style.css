@@ -1,76 +1,175 @@
+
+/* Set global styles for the body */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
+    font-family: Arial, sans-serif; /* Use Arial font with fallback to sans-serif */
+    background-color: #f5f5f5; /* Set background color to a light gray */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
 }
 
+/* Container Styles */
+
+/* Style the container to have a maximum width, centered alignment, and padding */
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+    max-width: 800px; /* Set maximum width to 800 pixels */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 20px; /* Add padding around the container content */
 }
 
+/* Heading Styles */
+
+/* Style the heading to be centered and have a dark color */
 h1 {
-    text-align: center;
-    color: #333;
+    text-align: center; /* Center align the heading */
+    color: #333; /* Set heading color to a dark gray */
 }
 
+/* Table Styles */
+
+/* Ensure horizontal overflow scrolling for tables exceeding container width */
 .table-container {
-    overflow-x: auto;
+    overflow-x: auto; /* Enable horizontal scrolling */
 }
 
+/* Style table to have 100% width and collapsed borders */
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
+    width: 100%; /* Set table width to 100% of its container */
+    border-collapse: collapse; /* Collapse borders to avoid double borders */
+    margin-bottom: 20px; /* Add margin at the bottom of the table */
 }
 
+/* Style table header and cells */
 table th, table td {
-    padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
+    padding: 10px; /* Add padding to table cells */
+    text-align: left; /* Left-align text within cells */
+    border-bottom: 1px solid #ddd; /* Add bottom border to separate rows */
 }
 
+/* Style table header */
 table th {
-    background-color: #f2f2f2;
-    font-weight: bold;
+    background-color: #f2f2f2; /* Set background color for table header */
+    font-weight: bold; /* Make table header text bold */
 }
 
+/* Form Styles */
+
+/* Style the form container with a white background, padding, border radius, and box shadow */
 .entry-form {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff; /* Set background color to white */
+    padding: 20px; /* Add padding around the form */
+    border-radius: 5px; /* Add border radius for rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add box shadow for depth effect */
 }
 
+/* Style form labels to display as blocks with bottom margin and bold font */
 .entry-form label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+    display: block; /* Display labels as block elements */
+    margin-bottom: 5px; /* Add bottom margin to separate labels */
+    font-weight: bold; /* Make label text bold */
 }
 
+/* Style form input fields and select dropdown */
 .entry-form input[type="date"],
 .entry-form input[type="text"],
 .entry-form input[type="number"],
 .entry-form select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
+    width: 100%; /* Set input width to 100% of its container */
+    padding: 10px; /* Add padding to inputs */
+    margin-bottom: 10px; /* Add bottom margin to separate inputs */
+    border: 1px solid #ccc; /* Add border with light gray color */
+    border-radius: 3px; /* Add border radius for rounded corners */
 }
 
+/* Style form submit button */
 .entry-form button[type="submit"] {
-    width: 100%;
-    padding: 10px;
-    background-color: #4caf50;
-    color: #fff;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
+    width: 100%; /* Set button width to 100% of its container */
+    padding: 10px; /* Add padding to the button */
+    background-color: #4caf50; /* Set button background color */
+    color: #fff; /* Set button text color to white */
+    border: none; /* Remove button border */
+    border-radius: 3px; /* Add border radius for rounded corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
 }
 
+/* Style form submit button on hover */
 .entry-form button[type="submit"]:hover {
-    background-color: #45a049;
+    background-color: #45a049; /* Darken button background color on hover */
+}
+
+/* Submit Button Styles */
+
+/* Style submit button div with flexbox for centering */
+.submit-div {
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center align children horizontally */
+    align-items: center; /* Center align children vertically */
+}
+
+/* Style general submit button with green background, white text, padding, border, and border radius */
+.submit {
+    cursor: pointer; /* Change cursor to pointer on hover */
+    background-color: #04AA6D; /* Set button background color to green */
+    border: none; /* Remove button border */
+    color: white; /* Set button text color to white */
+    padding: 15px 32px; /* Add padding to the button */
+    text-align: center; /* Center align button text */
+    text-decoration: none; /* Remove default text decoration */
+    display: inline-block; /* Display button as inline-block element */
+    font-size: 16px; /* Set button font size */
+    border-radius: 6px; /* Add border radius for rounded corners */
+}
+
+/* Style general submit button on hover with darker background color */
+.submit:hover {
+    background-color: #03754b; /* Darken button background color on hover */
+}
+
+/* Style the side navigation bar */
+.sidenav {
+    height: 100%; /* Set height to fill the entire viewport */
+    width: 200px; /* Set the width of the sidebar */
+    position: fixed; /* Keep the sidebar fixed */
+    top: 0; /* Position from the top */
+    left: 0; /* Initially show the navigation bar */
+    background-color: #333; /* Set background color */
+    padding-top: 60px; /* Add top padding to account for the navigation header */
+    transition: left 0.3s ease; /* Add transition effect for smooth animation */
+    z-index: 1; /* Ensure navigation bar appears above other content */
+}
+
+/* Style the links inside the navigation bar */
+.sidenav a {
+    padding: 10px 15px; /* Add padding */
+    text-decoration: none; /* Remove underline */
+    font-size: 18px; /* Set font size */
+    color: #fff; /* Text color */
+    display: block; /* Make the links appear one below the other */
+}
+
+/* Change the color of links on hover */
+.sidenav a:hover {
+    background-color: #555; /* Darken the background color */
+}
+
+/* Style the toggle button */
+.toggle-btn {
+    position: absolute; /* Position it wherever you want */
+    top: 20px; /* Adjust the top position */
+    left: 20px; /* Adjust the left position */
+    z-index: 2; /* Ensure it appears above other content */
+    background-color: #333; /* Background color */
+    color: #fff; /* Text color */
+    padding: 10px 20px; /* Padding for better visual */
+    border: none; /* Remove border */
+    cursor: pointer; /* Add cursor pointer for better UX */
+}
+
+/* Style the button on hover */
+.toggle-btn:hover {
+    background-color: #555; /* Darken the background color */
+}
+
+/* Style the active state of the button */
+.toggle-btn.active {
+    background-color: #555; /* Dark background color when active */
 }
