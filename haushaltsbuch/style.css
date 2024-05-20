@@ -256,9 +256,14 @@ table th {
 /* Style form labels to display as blocks with bottom margin and bold font */
 .entry-form label {
   display: block; /* Display labels as block elements */
-  margin-bottom: 5px; /* Add bottom margin to separate labels */
   font-weight: bold; /* Make label text bold */
-  color: #fff; /* Text color */
+  color: rgba(255, 255, 255, 0.25); /* Text color */
+  position: absolute;
+  left: 0;
+  padding: 2px;
+  pointer-events: none;
+  font-size: 1em;
+  text-transform: uppercase;
 }
 
 .entry-form input[type="date"] {
@@ -280,6 +285,11 @@ table th {
   filter: invert(1);
 }
 
+
+
+
+
+
 ::-webkit-calendar-picker-indicator {
     padding: 5px;
     cursor: pointer;
@@ -294,7 +304,11 @@ table th {
   padding: 10px; /* Add padding to inputs */
   margin-bottom: 10px; /* Add bottom margin to separate inputs */
   border: 1px solid #ccc; /* Add border with light gray color */
-  border-radius: 3px; /* Add border radius for rounded corners */
+  border-radius: 5px; /* Add border radius for rounded corners */
+  background-color:#ffffff00;
+  color: #fff;
+  outline: none;
+  font-size: 1em;
 }
 
 /* Style form submit button */
