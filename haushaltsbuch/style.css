@@ -248,19 +248,26 @@ table th {
 
 /* Style the form container with a white background, padding, border radius, and box shadow */
 .entry-form {
-  padding: 20px; /* Add padding around the form */
+  padding: 10px; /* Add padding around the form */
   border-radius: 5px; /* Add border radius for rounded corners */
   box-shadow: 0 2px 4px rgb(0 0 0 / 16%); /* Add box shadow for depth effect */
+  width: 100%;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 3px;
+  outline: none;
+  color: #ffffff;
+  font-size: 1em;
 }
 
 /* Style form labels to display as blocks with bottom margin and bold font */
-.entry-form label {
+.entry-form span {
   display: block; /* Display labels as block elements */
   font-weight: bold; /* Make label text bold */
   color: rgba(255, 255, 255, 0.25); /* Text color */
   position: absolute;
   left: 0;
-  padding: 2px;
+  padding: 10px;
   pointer-events: none;
   font-size: 1em;
   text-transform: uppercase;
@@ -284,12 +291,9 @@ table th {
 ::-webkit-calendar-picker-indicator {
   filter: invert(1);
   margin: 0%;
-}
-
-::-webkit-calendar-picker-indicator {
-    padding: 5px;
-    cursor: pointer;
-    border-radius: 3px;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 3px;
 }
 
 /* Style form input fields and select dropdown */
