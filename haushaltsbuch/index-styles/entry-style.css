@@ -1,138 +1,211 @@
 /* Container Styles */
-
-/* Style the container to have a maximum width, centered alignment, and padding */
 .container {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 3%;
-    left: 35%;
-    max-width: 800px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    transition: left 0.3s ease; /* Add transition effect for smooth animation */
+  position: relative;
+  top: 0;
+  left: 50%; /* Horizontally center the container */
+  transform: translateX(-50%); /* Adjust position for true horizontal center */
+  max-width: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align items horizontally */
+  transition: left 0.3s ease; /* Add transition effect for smooth animation */
+  padding-top: 50px; /* Add padding at the top for better spacing */
+  height: 90%; /* Set height to fill the entire viewport */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+element::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
+}
+
+/* Heading Styles */
+h1 {
+  text-align: center; /* Center align the heading */
+  color: #ffffff; /* Set the text color to white */
+  font-size: 2.5em; /* Increase the font size */
+  margin: 20px 0; /* Add margin above and below the heading */
+  padding: 10px; /* Add padding for spacing */
+  font-family: 'Arial', sans-serif; /* Use a modern font */
+}
+
+/* Form Styles */
+.entry-form {
+  padding: 10px; /* Add padding around the form */
+  border-radius: 5px; /* Add border radius for rounded corners */
+  width: 250px;
+  cursor: pointer;
+  border-radius: 3px;
+  outline: none;
+  color: #ffffff;
+  font-size: 1em;
+  position: relative;
+}
+
+.entry-form select {
+  width: 100%; /* Set input width to 100% of its container */
+  padding: 10px; /* Add padding to inputs */
+  margin-bottom: 10px; /* Add bottom margin to separate inputs */
+  border: 1px solid #ccc; /* Add border with light gray color */
+  border-radius: 5px; /* Add border radius for rounded corners */
+  background-color: #1d2b3a; /* Set background color */
+  color: #fff; /* Set text color */
+  outline: none;
+  font-size: 1em;
+}
+
+.entry-form option {
+  background-color: #1d2b3a; /* Set background color */
+  color: #fff; /* Set text color */
+}
+
+.entry-form input {
+  margin: auto;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: #1d2b3a;
+  border-radius: 5px;
+  outline: none;
+  color: #fff;
+  font-size: 1em;
+  transition: 0.5s;
+}
+
+.entry-form span {
+  display: block; /* Display labels as block elements */
+  font-weight: bold; /* Make label text bold */
+  color: rgba(255, 255, 255, 0.25); /* Text color */
+  position: absolute;
+  left: 0;
+  padding: 10px;
+  pointer-events: none;
+  font-size: 1em;
+  text-transform: uppercase;
+}
+
+input[type="date"]::-webkit-datetime-edit {
+  color: #fff;
+}
+
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  margin: 0%;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.entry-form input[type="text"],
+.entry-form input[type="number"],
+.entry-form input[type="date"],
+.entry-form select {
+  width: 100%; /* Set input width to 100% of its container */
+  padding: 10px; /* Add padding to inputs */
+  margin-bottom: 10px; /* Add bottom margin to separate inputs */
+  border: 1px solid #ccc; /* Add border with light gray color */
+  border-radius: 5px; /* Add border radius for rounded corners */
+  background-color: #ffffff00;
+  color: #fff;
+  outline: none;
+  font-size: 1em;
+}
+
+.entry-form button[type="submit"] {
+  width: 100%; /* Set button width to 100% of its container */
+  padding: 10px; /* Add padding to the button */
+  background-color: #4caf50; /* Set button background color */
+  color: #fff; /* Set button text color to white */
+  border: none; /* Remove button border */
+  border-radius: 3px; /* Add border radius for rounded corners */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.entry-form button[type="submit"]:hover {
+  background-color: #45a049; /* Darken button background color on hover */
+}
+
+/* Submit Button Styles */
+.submit-div {
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center align children horizontally */
+  align-items: center; /* Center align children vertically */
+}
+
+.submit {
+  cursor: pointer; /* Change cursor to pointer on hover */
+  background-color: #04aa6d; /* Set button background color to green */
+  border: none; /* Remove button border */
+  color: white; /* Set button text color to white */
+  padding: 15px 32px; /* Add padding to the button */
+  text-align: center; /* Center align button text */
+  text-decoration: none; /* Remove default text decoration */
+  display: inline-block; /* Display button as inline-block element */
+  font-size: 16px; /* Set button font size */
+  border-radius: 6px; /* Add border radius for rounded corners */
+}
+
+.submit:hover {
+  background-color: #03754b; /* Darken button background color on hover */
+}
+
+.content-container {
+  display: flex;
+  width: 100%;
+  max-width: 70%;
+  justify-content: space-between; /* Distribute space between form and table */
+  align-items: flex-start; /* Align items to the start of the container */
+  gap: 20px; /* Add gap between form and table */
+  padding: 20px 0; /* Add padding at the top and bottom */
+}
+
+/* Table Styles */
+.table-container {
+  margin: auto;
+  overflow-y: auto; /* Enable horizontal scrolling */
+  max-width: 100%; /* Set maximum width to 100% of its container */
+  border-radius: 5px; /* Add border radius for rounded corners */
+  width: 60%;
+}
+
+table {
+  width: 100%; /* Set table width to 100% of its container */
+  border-collapse: collapse; /* Collapse borders to avoid double borders */
+  margin-bottom: 20px; /* Add margin at the bottom of the table */
+  color: #ffffff;
+  font-weight: bold;
+}
+
+table th,
+table td {
+  padding: 10px; /* Add padding to table cells */
+  text-align: left; /* Left-align text within cells */
+  border-bottom: 1px solid #ddd; /* Add bottom border to separate rows */
+}
+
+table th {
+  font-weight: bold; /* Make table header text bold */
+}
+
+/* Enable scrolling only inside the table body */
+.table-container tbody {
+  overflow-y: auto; /* Enable vertical scrolling */;
+}
+
+/* Responsive Styles */
+
+@media (max-width: 768px) {
+  .container {
+      flex-direction: column;
+      align-items: center;
   }
-  
-  /* Heading Styles */
-  
-  /* Style the heading to be centered and have a dark color */
-  h1 {
-    text-align: center; /* Center align the heading */
-    color: #ffffff;
-  }
-  
-  /* Form Styles */
-  
-  /* Style the form container with a white background, padding, border radius, and box shadow */
-  .entry-form {
-    padding: 10px; /* Add padding around the form */
-    border-radius: 5px; /* Add border radius for rounded corners */
-    box-shadow: 0 2px 4px rgb(0 0 0 / 16%); /* Add box shadow for depth effect */
-    width: 250px;
-    padding: 5px;
-    cursor: pointer;
-    border-radius: 3px;
-    outline: none;
-    color: #ffffff;
-    font-size: 1em;
-    position: relative;
-  }
-  
-  .entry-form input{
+
+  .form-container,
+  .table-container {
       width: 100%;
-      padding: 10px;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      background: #1d2b3a;
-      border-radius: 5px;
-      outline: none;
-      color: #fff;
-      font-size: 1em;
-      transition: 0.5s;
+      max-width: 100%;
+      margin-right: 0;
   }
-  
-  /* Style form labels to display as blocks with bottom margin and bold font */
-  .entry-form span {
-    display: block; /* Display labels as block elements */
-    font-weight: bold; /* Make label text bold */
-    color: rgba(255, 255, 255, 0.25); /* Text color */
-    position: absolute;
-    left: 0;
-    padding: 10px;
-    pointer-events: none;
-    font-size: 1em;
-    text-transform: uppercase;
-  }
-  
-  input[type="date"]::-webkit-datetime-edit {
-      color: transparent;
-  }
-  
-  ::-webkit-calendar-picker-indicator {
-    filter: invert(1);
-    margin: 0%;
-    padding: 5px;
-    cursor: pointer;
-    border-radius: 3px;
-  }
-  
-  /* Style form input fields and select dropdown */
-  .entry-form input[type="text"],
-  .entry-form input[type="number"],
-  .entry-form input[type="date"],
-  .entry-form select {
-    width: 100%; /* Set input width to 100% of its container */
-    padding: 10px; /* Add padding to inputs */
-    margin-bottom: 10px; /* Add bottom margin to separate inputs */
-    border: 1px solid #ccc; /* Add border with light gray color */
-    border-radius: 5px; /* Add border radius for rounded corners */
-    background-color:#ffffff00;
-    color: #fff;
-    outline: none;
-    font-size: 1em;
-  }
-  
-  /* Style form submit button */
-  .entry-form button[type="submit"] {
-    width: 100%; /* Set button width to 100% of its container */
-    padding: 10px; /* Add padding to the button */
-    background-color: #4caf50; /* Set button background color */
-    color: #fff; /* Set button text color to white */
-    border: none; /* Remove button border */
-    border-radius: 3px; /* Add border radius for rounded corners */
-    cursor: pointer; /* Change cursor to pointer on hover */
-  }
-  
-  /* Style form submit button on hover */
-  .entry-form button[type="submit"]:hover {
-    background-color: #45a049; /* Darken button background color on hover */
-  }
-  
-  /* Submit Button Styles */
-  
-  /* Style submit button div with flexbox for centering */
-  .submit-div {
-    display: flex; /* Use flexbox for layout */
-    justify-content: center; /* Center align children horizontally */
-    align-items: center; /* Center align children vertically */
-  }
-  
-  /* Style general submit button with green background, white text, padding, border, and border radius */
-  .submit {
-    cursor: pointer; /* Change cursor to pointer on hover */
-    background-color: #04aa6d; /* Set button background color to green */
-    border: none; /* Remove button border */
-    color: white; /* Set button text color to white */
-    padding: 15px 32px; /* Add padding to the button */
-    text-align: center; /* Center align button text */
-    text-decoration: none; /* Remove default text decoration */
-    display: inline-block; /* Display button as inline-block element */
-    font-size: 16px; /* Set button font size */
-    border-radius: 6px; /* Add border radius for rounded corners */
-  }
-  
-  /* Style general submit button on hover with darker background color */
-  .submit:hover {
-    background-color: #03754b; /* Darken button background color on hover */
-  }
-  
+}

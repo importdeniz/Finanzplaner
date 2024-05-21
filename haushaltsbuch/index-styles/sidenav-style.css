@@ -1,48 +1,40 @@
-  /* Style the side navigation bar */
-  .sidenav {
-    height: 100%; /* Set height to fill the entire viewport */
-    width: 200px; /* Set the width of the sidebar */
-    position: fixed; /* Keep the sidebar fixed */
-    top: 0; /* Position from the top */
-    left: 0; /* Initially show the navigation bar */
-    padding-top: 60px; /* Add top padding to account for the navigation header */
-    transition: left 0.3s ease; /* Add transition effect for smooth animation */
-    z-index: 1; /* Ensure navigation bar appears above other content */
-  }
-  
-  /* Style the links inside the navigation bar */
-  .sidenav a {
-    padding: 10px 15px; /* Add padding */
-    text-decoration: none; /* Remove underline */
-    font-size: 18px; /* Set font size */
-    color: #fff; /* Text color */
-    display: block; /* Make the links appear one below the other */
-  }
-  
-  /* Change the color of links on hover */
-  .sidenav a:hover {
-    background-color: #555; /* Darken the background color */
-  }
-  
-  /* Style the toggle button */
-  .toggle-btn {
-    position: absolute; /* Position it wherever you want */
-    top: 20px; /* Adjust the top position */
-    left: 20px; /* Adjust the left position */
-    z-index: 2; /* Ensure it appears above other content */
-    background-color: #333; /* Background color */
-    color: #fff; /* Text color */
-    padding: 10px 20px; /* Padding for better visual */
-    border: none; /* Remove border */
-    cursor: pointer; /* Add cursor pointer for better UX */
-  }
-  
-  /* Style the button on hover */
-  .toggle-btn:hover {
-    background-color: #555; /* Darken the background color */
-  }
-  
-  /* Style the active state of the button */
-  .toggle-btn.active {
-    background-color: #555; /* Dark background color when active */
-  }
+/* Side Navigation Styles */
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  top: 0;
+  left: -200px; /* Setze den initialen linken Wert auf -200px, um die Seitenleiste auszublenden */
+  padding-top: 60px;
+  transition: left 0.3s ease; /* Füge eine Transition für den left-Wert hinzu */
+  z-index: 1;
+  overflow-y: auto;
+}
+
+.sidenav a {
+  padding: 10px 15px; /* Add padding */
+  text-decoration: none; /* Remove underline */
+  font-size: 18px; /* Set font size */
+  color: #fff; /* Text color */
+  display: block; /* Make the links appear one below the other */
+}
+
+.sidenav a:hover {
+  background-color: #55555554; /* Darken the background color */
+}
+
+.toggle-btn {
+  position: absolute; /* Position it wherever you want */
+  top: 20px; /* Adjust the top position */
+  left: 20px; /* Adjust the left position */
+  z-index: 2; /* Ensure it appears above other content */
+  background-color: #33333300; /* Background color */
+  color: #fff; /* Text color */
+  padding: 10px 20px; /* Padding for better visual */
+  border: none; /* Remove border */
+  cursor: pointer; /* Add cursor pointer for better UX */
+}
+
+.toggle-btn:hover {
+  background-color: #55555554; /* Darken the background color */
+}

@@ -109,19 +109,27 @@ function addEntryToTable(entry) {
   table.appendChild(row);
 }
 
-// Function to toggle the visibility of the side navigation bar
-async function toggleNav() {
-  var sidenav = document.querySelector('.sidenav'); // Get reference to the side navigation bar
-  sidenav.classList.toggle('active'); // Toggle the 'active' class to show/hide the sidebar
-  let main = document.getElementById("container"); // Get reference to the main content
-  if (sidenav.style.left === "0px") {
-    sidenav.style.left = "-200px"; // Hide the navigation bar
-    main.style.left = "30%"
+function toggleNav() {
+  var sidenav = document.querySelector('.sidenav');
+  var main = document.getElementById("content-container");
+
+  sidenav.classList.toggle('active');
+  main.classList.toggle('shifted');
+
+  if (sidenav.classList.contains('active')) {
+    sidenav.style.left = "0px";
+    main.style.transition = "margin-left 0.3s ease"; // Add transition for smooth movement
+    main.style.marginLeft = "150px"; // Add a margin to the main container when sidebar is active
   } else {
-    sidenav.style.left = "0px"; // Show the navigation bar
-    main.style.left = "35%"
+    sidenav.style.left = "-200px";
+    main.style.transition = "margin-left 0.3s ease"; // Add transition for smooth movement
+    main.style.marginLeft = "0"; // Reset the margin when sidebar is inactive
   }
 }
+
+
+
+
 
 function setTodayDate() {
     var dateInput = document.getElementById('date');
